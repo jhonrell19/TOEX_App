@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">TOEX App</string> <!-- Or whatever your app name is -->
+
+    <!-- Login Screen -->
+    <string name="logo_login">Application Logo</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="title_activity_login">Login</string> <!-- ADD THIS -->
+
+    <!-- Sign Up Screen -->
+    <string name="create_your_account">Create Your Account</string>
+    <string name="email">E-Mail</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="logo_signup">Application Logo</string>
+    <string name="go_to_sign_in">SIGN IN</string>
+
+    <!-- MainActivity -->
+    <string name="title_activity_main">Home</string> <!-- ADD THIS (or "Main Menu", "Dashboard", etc.) -->
+
+    <!-- Map Activity -->
+    <string name="title_activity_map">Commute Fare Calculator</string>
+
+    <!-- Toasts/Messages -->
+    <string name="login_successful">Login Successful!</string>
+    <string name="enter_username_password">Please enter username and password</string>
+    <string name="forgot_password_clicked">Forgot Password Clicked</string>
+    <string name="sign_up_clicked">Sign Up Clicked</string>
+    <string name="signup_successful">Account Created Successfully!</string>
+    <string name="fields_cannot_be_empty">All fields are required.</string>
+    <string name="passwords_do_not_match">Passwords do not match.</string>
+    <string name="invalid_email_format">Invalid email format.</string>
+
+    <string name="start_lakbay_button">Start Lakbay</string>
+    <string name="stop_lakbay_button">Stop Lakbay</string>
+    <string name="estimated_time_format">Estimated %d mins</string>
+    <string name="fare_amount_format">₱%.2f</string>
+    <string name="fare_type_format">%s Est. Fare</string>
+    <string name="jeep_description">Jeep\nStandard jeepney route.</string>
+    <string name="bus_description">Bus\nStandard bus route.</string>
+    <string name="tricycle_description">Tricycle\nCommon tricycle route.</string>
+
+    <!-- ... other strings ... -->
+    <string name="calculate_bus_fare_button">Calculate Bus Fare</string>
+    <string name="stop_current_trip_button">Stop Current Trip</string>
+    <string name="estimated_time_with_label">Estimated: %s</string>
+    <string name="fare_amount_with_label">Fare: %s</string>
+    <string name="distance_with_label">Distance: %.1f km</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_menu"
+        android:icon="@drawable/ic_menu_24"
+    android:title="Menu"/>
+    <item
+        android:id="@+id/nav_bookmark"
+        android:icon="@drawable/ic_bookmark_24"
+    android:title="Saved"/>
+    <item
+        android:id="@+id/nav_lakbay"
+        android:icon="@drawable/ic_map_24"
+    android:title="Lakbay"/>
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_person_24"
+    android:title="Profile"/>
+</menu>

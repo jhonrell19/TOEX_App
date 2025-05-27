@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="yellow_accent">#FFD700</color>
+    <color name="grey_hint">#A0A0A0</color>
+
+    <color name="backgroundColor">@color/black</color>
+    <color name="textColorPrimary">@color/white</color>
+    <color name="textColorHint">@color/grey_hint</color>
+    <color name="buttonSignInBackground">@color/yellow_accent</color> <!-- Used by button_rounded_yellow -->
+    <color name="buttonSignInText">@color/black</color>
+    <color name="underlineColor">@color/white</color>
+    <color name="linkTextForgotPassword">@color/white</color>
+    <color name="linkTextSignUp">@color/yellow_accent</color>
+
+    <color name="light_blue_background">#E0F7FA</color> <!-- Example light blue for input fields -->
+    <color name="medium_blue_accent">#00ACC1</color>   <!-- Example for selected radio button -->
+    <color name="dark_text_primary">#212121</color>
+    <color name="medium_text_secondary">#757575</color>
+    <color name="red_button_color">#D32F2F</color>     <!-- Example red -->
+    <color name="divider_color">#BDBDBD</color>
+</resources>
