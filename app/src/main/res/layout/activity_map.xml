@@ -167,6 +167,16 @@ app:layout_constraintEnd_toEndOf="parent">
         tools:text="Distance: 5.3 km"
         android:textColor="@color/medium_text_secondary"
         android:textSize="12sp"/>
+
+    <Button
+        android:id="@+id/buttonSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        android:text="Sign Out"
+        style="?attr/materialButtonOutlinedStyle" />
+
 </LinearLayout>
 </androidx.cardview.widget.CardView>
     <Button

@@ -3,6 +3,7 @@ package com.prot.toex_app
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
@@ -11,6 +12,8 @@ import android.os.Bundle
 import android.os.Looper
 import android.preference.PreferenceManager
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
@@ -74,7 +77,41 @@ class MapActivity : AppCompatActivity() {
         // Initial UI state
         binding.cardViewFareDetails.visibility = View.GONE
         binding.textViewFullAddress.visibility = View.GONE
+
+        binding.buttonSignOut.setOnClickListener {
+            performSignOut()
+        }
+
     }
+
+    private fun performSignOut(){
+
+        val intent = Intent(this, LoginActivity::class.java)
+
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+
+        finish()
+
+        Toast.makeText(this, "Signed out", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.map_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_sign_out -> {
+                performSignOut()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+
 
     private fun setupMap() {
         map = binding.mapView
@@ -441,4 +478,8 @@ class MapActivity : AppCompatActivity() {
         super.onDestroy()
         map.onDetach()
     }
+
+
+
 }
+

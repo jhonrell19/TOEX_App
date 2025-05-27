@@ -48,4 +48,6 @@
     <string name="estimated_time_with_label">Estimated: %s</string>
     <string name="fare_amount_with_label">Fare: %s</string>
     <string name="distance_with_label">Distance: %.1f km</string>
+
+    <string name="sign_out">Sign Out</string>
 </resources>
