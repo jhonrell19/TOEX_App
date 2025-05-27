@@ -1,5 +1,6 @@
 package com.prot.toex_app
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -17,6 +18,14 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val isLoggedIn = checkIfUserIsLoggedIn() // Implement this function
+
+        if (isLoggedIn) {
+            startActivity(Intent(this, MapActivity::class.java))
+        } else {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+        finish() // Finish MainActivity so user can't go back to it
         setContent {
             TOEX_AppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -27,6 +36,13 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+    private fun checkIfUserIsLoggedIn(): Boolean {
+        // TODO: Implement your actual login status check here.
+        // Example using SharedPreferences:
+        // val prefs = getSharedPreferences("YourAppPrefsName", MODE_PRIVATE)
+        // return prefs.getBoolean("USER_IS_LOGGED_IN", false)
+        return false // Default to false to show LoginActivity first
     }
 }
 

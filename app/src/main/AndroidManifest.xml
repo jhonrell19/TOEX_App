@@ -33,15 +33,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MapActivity"
-            android:exported="false"
-            android:label="@string/title_activity_map" />
-
         <!-- SignUpActivity: Launched from LoginActivity -->
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".MapActivity"
+            android:exported="false"
+            android:label="@string/title_activity_map" />
 
         <!-- MainActivity: Launched after successful login -->
         <activity

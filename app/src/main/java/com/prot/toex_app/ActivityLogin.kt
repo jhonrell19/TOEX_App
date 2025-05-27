@@ -15,44 +15,48 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
         binding.buttonSignIn.setOnClickListener {
             val username = binding.editTextUsername.text.toString().trim()
             val password = binding.editTextPassword.text.toString().trim()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                // TODO: Implement your actual login authentication logic here
-                // For example, call an API, check against a local database, etc.
-                Toast.makeText(this, getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
+                // --- SIMPLE HARDCODED VALIDATION (FOR "NO DATABASE" TESTING) ---
+                // Replace "user" and "password123" with what you want to test with
+                if (username == "user" && password == "password123") {
+                    Toast.makeText(this, getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
 
-
+                    // Navigate to MapActivity ONLY on successful validation
+                    val intent = Intent(this, MapActivity::class.java)
+                    // Clear previous tasks and make MapActivity the new root
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish() // Finish LoginActivity so user can't go back to it
+                } else {
+                    // Invalid credentials
+                    Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
+                }
             } else {
+                // Fields are empty
                 Toast.makeText(this, getString(R.string.enter_username_password), Toast.LENGTH_SHORT).show()
             }
         }
 
         binding.textViewForgotPassword.setOnClickListener {
             // TODO: Implement your forgot password logic
-            // For example, navigate to a Forgot Password screen or show a dialog
             Toast.makeText(this, getString(R.string.forgot_password_clicked), Toast.LENGTH_SHORT).show()
         }
 
+        // You have two listeners for textViewSignUp. The second one will override the first.
+        // Let's keep the one that navigates.
         binding.textViewSignUp.setOnClickListener {
-            // TODO: Implement your sign-up logic
-            // For example, navigate to a Sign Up screen
-            Toast.makeText(this, getString(R.string.sign_up_clicked), Toast.LENGTH_SHORT).show()
-        }
-        binding.textViewSignUp.setOnClickListener {
-            // Toast.makeText(this, getString(R.string.sign_up_clicked), Toast.LENGTH_SHORT).show() // Remove or keep for debugging
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
-            // Do NOT finish LoginActivity here, so user can go back to it if they change their mind on SignUp screen
+            // Do NOT finish LoginActivity here, so user can go back to it from SignUp screen
         }
-        Toast.makeText(this, getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
 
-        val intent = Intent(this, MapActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
+        // DO NOT have unconditional navigation to MapActivity here.
+        // The navigation should ONLY happen inside the buttonSignIn click listener
+        // after successful validation.
+
+    } // End of onCreate
 }
